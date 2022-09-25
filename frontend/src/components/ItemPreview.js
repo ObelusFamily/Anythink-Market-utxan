@@ -29,12 +29,6 @@ const ItemPreview = (props) => {
     }
   };
   let itemImage;
-  if (!item.image) {
-    itemImage = item_Image;
-  }else{
-    itemImage = item.image;
-  }
-
   return (
     <div
       className="card bg-dark border-light p-3"

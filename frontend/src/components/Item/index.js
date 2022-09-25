@@ -8,6 +8,7 @@ import {
   ITEM_PAGE_LOADED,
   ITEM_PAGE_UNLOADED,
 } from "../../constants/actionTypes";
+import itemImage from "../../placeholder.png";
 
 const mapStateToProps = (state) => ({
   ...state.item,
@@ -44,13 +45,20 @@ class Item extends React.Component {
     const canModify =
       this.props.currentUser &&
       this.props.currentUser.username === this.props.item.seller.username;
+    
+    let item_Image;
+    if (this.props.item.image){
+      item_Image = this.props.item.image;
+    }else{
+      item_Image = itemImage;
+    }
     return (
       <div className="container page">
         <div className="text-dark">
           <div className="row bg-white p-4">
             <div className="col-6">
               <img
-                src={this.props.item.image}
+                src={item_Image}
                 alt={this.props.item.title}
                 className="item-img"
                 style={{ height: "500px", width: "100%", borderRadius: "6px" }}

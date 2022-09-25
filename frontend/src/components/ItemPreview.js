@@ -28,11 +28,11 @@ const ItemPreview = (props) => {
       props.favorite(item.slug);
     }
   };
-  let i_Image;
+  let item_Image;
   if (item.image){
-    i_Image = item.image;
+    item_Image = item.image;
   }else{
-    i_Image = itemImage;
+    item_Image = itemImage;
   }
   return (
     <div
@@ -41,7 +41,7 @@ const ItemPreview = (props) => {
     >
       <img
         alt="item"
-        src={i_Image}
+        src={item_Image}
         className="card-img-top item-img"
         style={{ borderRadius: "20px" }}
       />
